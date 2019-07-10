@@ -1,0 +1,19 @@
+#配置文件的查看方式：http://localhost:8001/service-basedata-dev.properties或http://localhost:8001/service-basedata/dev/
+#demo-dev.properties
+server:
+  port: 8001
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/BikerCoder/spring-cloud-common/     # 配置git仓库的地址
+          search-paths: src/main/java/com/demo/config      # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username: BikerCoder                                        # git仓库的账号
+          password: cg189867                                    # git仓库的密码
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/   ## 注册中心eurka地址

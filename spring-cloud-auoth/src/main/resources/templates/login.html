@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"></meta>
+<title>登录</title>
+<script type="text/javascript" src="/jquery-1.7.2.min.js"></script>
+
+</head>
+<body>
+	<form id="sub" method="post">
+
+		用户名：<input id = "ids" name="userName" type="text" /> <br> 
+		密 码2：<input name="password" type="password" /><br> 
+		<input onclick= "doSubmit();" type="button" value="登录"/><br> 
+
+	</form>
+
+<script type="text/javascript">
+function doSubmit(){
+	$("#sub").attr("action",window.location.href);
+	var s = $("#sub");
+	console.log(s);
+	$("#sub").submit();
+}
+
+</script>
+</body>
+</html>

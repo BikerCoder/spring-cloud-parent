@@ -1,0 +1,50 @@
+server:
+  port: 8003
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+      
+spring:
+  application:
+    name: spring-cloud-auoth
+  cloud:
+    config:
+      name: spring-cloud-auoth
+      profile: dev
+      label: master
+      discovery:
+        enabled: true
+        serviceId: spring-cloud-config-server
+  #数据库连接
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: ${spring.datasource.url}
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+  #模板
+  thymeleaf:
+   cache: false
+   mode: LEGACYHTML5
+   prefix: classpath:/templates/
+   suffix: .html
+
+mybatis:
+  type-aliases-package: com.example.springBoot.entity
+  mapper-locations: classpath:mapping/*.xml
+logging:
+  config: classpath:logback-spring.xml
+
+#redis
+jedis: 
+  pool:
+    host: localhost
+    port: ${jedis.pool.port}
+    password: ${jedis.pool.password}
+    database: ${jedis.pool.database}
+    config:
+      maxIdle: 10
+      maxTotal: 100
+      maxWaitMillis: 100000
+      
