@@ -13,7 +13,8 @@
         <module>spring-cloud-config-server</module>
         <module>spring-cloud-eureka</module>
         <module>spring-cloud-base</module>
-	</modules>
+        <module>spring-cloud-gateway</module>
+    </modules>
 	<name>spring-cloud-parent</name>
 	<description>Demo project for Spring cloud eureka</description>
 

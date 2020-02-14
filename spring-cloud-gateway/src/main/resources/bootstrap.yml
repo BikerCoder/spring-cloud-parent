@@ -1,0 +1,20 @@
+server:
+  port: 8008
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/   ## 注册中心eurka地址
+spring:
+  application:
+    name: spring-cloud-gateway
+  cloud:
+    config:
+      name: spring-cloud-gateway
+      profile: dev
+      label: master
+      discovery:
+        enabled: true
+        service-id: spring-cloud-config-server
+
+logging:
+  config: classpath:logback-spring.xml
