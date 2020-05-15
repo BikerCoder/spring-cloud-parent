@@ -15,7 +15,7 @@ public class InterceptorConfig extends WebMvcConfigurerAdapter {
 	}
 
 	@Override
-	public void addInterceptors(InterceptorRegistry registry) {
+	public void addInterceptors(InterceptorRegistry registry){
 		// 这里可以添加多个拦截器
 		registry.addInterceptor(getInterceptor()).addPathPatterns("/**", "/doc.html").excludePathPatterns(
 				"/user/login/**",
